@@ -7,13 +7,12 @@ FactoryGirl.define do
     ph 1.5
 
     factory :horizonte_completo do
-      # FIXME agregar asociaciones
-      #   analitico
-      #   limite
-      #   consistencia
-      #   estructura
-      #   color_seco
-      #   color_humedo
+      association :analitico, factory: :analitico_completo
+      limite
+      consistencia
+      estructura
+      color_seco
+      color_humedo
 
       humedad { generate :cadena_unica }
       raices { generate :cadena_unica }

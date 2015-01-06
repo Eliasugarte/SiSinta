@@ -21,6 +21,14 @@ class MiniTest::Unit::TestCase
   # build_stubbed, create, attributes_for, y los *_list)
   include FactoryGirl::Syntax::Methods
 
+  def setup
+    DatabaseCleaner.start
+  end
+
+  def teardown
+    DatabaseCleaner.clean
+  end
+
   # Convierte un perfil en CSV::Rows
   def perfil_a_csv(perfil)
     CSV.parse(CSVSerializer.new([perfil]).as_csv(headers: true), headers: true)

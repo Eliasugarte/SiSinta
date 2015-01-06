@@ -119,7 +119,7 @@ class PerfilesControllerTest < ActionController::TestCase
     usuario = loguearse_como 'Autorizado'
     perfil = create(:perfil, usuario: usuario)
     perfil.horizontes.create(attributes_for(:horizonte))
-    analitico = attributes_for(:analitico, id: perfil.analiticos.first.id)
+    analitico = attributes_for(:analitico_completo, id: perfil.analiticos.first.id)
 
     put :update_analiticos, id: perfil.to_param, perfil: {
       analiticos_attributes: { '0' => analitico }
