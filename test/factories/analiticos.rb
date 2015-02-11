@@ -1,9 +1,11 @@
 # encoding: utf-8
 FactoryGirl.define do
   factory :analitico do
-    horizonte
+    trait :con_horizonte do
+      horizonte
+    end
 
-    factory :analitico_completo do
+    trait :con_datos do
       registro            { rand(100) }
       humedad             { generate(:porcentaje).round 2 }
       s                   { generate :porcentaje }

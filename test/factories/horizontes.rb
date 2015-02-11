@@ -7,7 +7,7 @@ FactoryGirl.define do
     ph 1.5
 
     factory :horizonte_completo do
-      association :analitico, factory: :analitico_completo
+      association :analitico, :con_datos, strategy: :build
       limite
       consistencia
       estructura

@@ -21,6 +21,10 @@ class MiniTest::Unit::TestCase
   # build_stubbed, create, attributes_for, y los *_list)
   include FactoryGirl::Syntax::Methods
 
+  # Incluye assert_difference
+  # TODO sacar después de actualizar a rails 4.1?
+  include ActiveSupport::Testing::Assertions
+
   def setup
     DatabaseCleaner.start
   end
